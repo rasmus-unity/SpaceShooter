@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class GameController : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
 	
-    public GUIText scoreText;
-    public GUIText restartText;
-    public GUIText gameOverText;
+    public UnityEngine.UI.Text scoreText;
+    public GameObject restartButton;
+    public UnityEngine.UI.Text gameOverText;
 	
     private bool gameOver;
     private bool restart;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
-        restartText.text = "";
+        restartButton.SetActive (false);
         gameOverText.text = "";
         score = 0;
         UpdateScore ();
@@ -34,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         if (restart)
         {
-            if (Input.GetKeyDown (KeyCode.R))
+            if (CrossPlatformInputManager.GetButtonDown("Restart"))
             {
                 SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
             }
@@ -58,7 +59,7 @@ public class GameController : MonoBehaviour
 			
             if (gameOver)
             {
-                restartText.text = "Press 'R' for Restart";
+                restartButton.SetActive (true);
                 restart = true;
                 break;
             }
