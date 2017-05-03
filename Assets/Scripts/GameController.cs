@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public float waveWait;
 	
     public UnityEngine.UI.Text scoreText;
-    public GameObject restartButton;
+    public GameObject restartPanel;
     public UnityEngine.UI.Text gameOverText;
 	
     private bool gameOver;
@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
-        restartButton.SetActive (false);
+        restartPanel.SetActive (false);
         gameOverText.text = "";
         score = 0;
         UpdateScore ();
@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
 			
             if (gameOver)
             {
-                restartButton.SetActive (true);
+                restartPanel.SetActive (true);
                 restart = true;
                 break;
             }
