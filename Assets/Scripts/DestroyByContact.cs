@@ -28,6 +28,14 @@ public class DestroyByContact : MonoBehaviour
             return;
         }
 
+		if (other.tag == "Adball")
+		{
+			Instantiate (explosion, transform.position, transform.rotation);
+			var ads = new Ads {};
+			ads.ShowAd ();
+			return;
+		}
+
         if (explosion != null)
         {
             Instantiate (explosion, transform.position, transform.rotation);

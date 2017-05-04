@@ -593,11 +593,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    UNet: 1
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 6bfaa549-4ca6-4527-be0d-8f74076b2839
+  projectName: My Real Spaceshooter
+  organizationId: hetahetaheta
   cloudEnabled: 0
   enableNewInputSystem: 0
